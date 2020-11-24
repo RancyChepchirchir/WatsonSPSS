@@ -26,11 +26,48 @@ It should take you approximately 60 minutes to complete this tutorial.
 
 ### Setup your environment 
 
-1. Create a Watson Studio Service 
+1. Create an IBM Cloud Object Storage service.
+2. Create an IBM Watson Studio project.
+3. Provision IBM Cloud services.
+4. Upload the data set.
 
-Once logged in, search for Watson Studio and create a lite instance
+You must complete these steps before continuing with the learning path. If you have finished setting up your environment, continue with the next step, creating a model flow.
+
+**1. Create a Watson Studio Service**
+
+Once logged in, search for Watson Studio and create a lite instance.
 
 ![WatsonSearch](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/ws1.png?raw=true)
 
 
 ![WatsonSearch](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/ws2.png?raw=true)
+
+**2. Create IBM Cloud Object Storage service**
+
+To create an IBM Cloud Object Storage service, search for Object Storage and create a lite instance.
+
+![OB1](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/ob1.png?raw=true)
+
+![OB2](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/ob2.png?raw=true)
+
+**3. Create a Watson Machine Learning Service instance**
+
+To create a Watson Machine Learning instance, search for Machine Learning and create a lite instance.
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml1.png?raw=true)
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml2.png?raw=true)
+
+**4. Upload data set**
+
+- Clone this repository or download this repository 
+
+```script
+git clone https://github.com/fawazsiddiqi/WatsonSPSS
+``` 
+![git](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/git1.png?raw=true)
+
+In Watson Studio, go to the assets tab, and drag and drop the ```customer-churn-kaggle.csv``` from the Data folder from the repository which you just downloaded/cloned
+
+![asset](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/asset.png?raw=true)
+
