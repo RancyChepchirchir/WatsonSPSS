@@ -348,6 +348,94 @@ A new window opens.
 
 The model is saved to the current project.
 
-The model should now appear in the Models section of the Assets tab for the project.
+The model should now appear in the **Models** section of the Assets tab for the project.
 
 ![spss](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/model-list.png?raw=true)
+
+6. Select your model in the Assets tab in the project and select ```Promote to Deployment Space```
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml3.png?raw=true)
+
+7. Select ```New Space +```
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml4.png?raw=true)
+
+8. Create a new Deployment Space and select your Machine Learning service and Object Storage and click ```create```
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml5.png?raw=true)
+
+9. Once the deployment space is created, select it and click ```Promote```
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml6.png?raw=true)
+
+10. Click on the hamburger menu and select ```Deployment spaces``` you should see your created deployment space there; access the deployment space
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml7.png?raw=true)
+
+11. Select the model and click on create deployment
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml8.png?raw=true)
+
+12. You will be prompted with the following; Select ```Online``` and give your deployment a name and click ```Create```
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml9.png?raw=true)
+
+13. Wait for the status to be set to ```Deployed```
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/wml10.png?raw=true)
+
+### Testing the model
+
+Now, the model is deployed and can be used for prediction. However, before using it in a production environment it might be worthwhile to test it using real data. You can do this interactively or programmatically using the API for the IBM Machine Learning Service. For now, we test it interactively.
+
+The UI provides two options for testing the prediction: by entering the values one by one in distinct fields (one for each feature) or by specifying the feature values using a JSON object. We use the second option because it is the most convenient one when tests are performed more than once (which is usually the case), and when a large set of feature values is needed. 
+
+To get a predefined test data set:
+
+1. Download the test data from GitHub in the file [customer-churn-test-data.txt](https://github.com/fawazsiddiqi/WatsonSPSS/blob/main/data/customer-churn-test-data.txt).
+
+2. Open the file and copy the value.
+
+Notice that the JSON object defines the names of the fields first, followed by a sequence of observations to be predicted, each in the form of a sequence:
+
+```git 
+{"input_data":[{"fields": ["state", "account length", "area code", "phone number", "international plan", "voice mail plan", "number vmail messages", "total day minutes", "total day calls", "total day charge", "total eve minutes", "total eve calls", "total eve charge", "total night minutes", "total night calls", "total night charge", "total intl minutes", "total intl calls", "total intl charge", "customer service calls"], "values": [["NY",161,415,"351-7269","no","no",0,332.9,67,56.59,317.8,97,27.01,160.6,128,7.23,5.4,9,1.46,4]]}]}
+```
+
+Note that some of the features, such as state and phone number, are expected to be in the form of strings (which should be no surprise), whereas the true numerical features can be provided as integers or floats as appropriate for the given feature.
+
+To test the model at run time:
+
+1. Select the deployment that you just created by clicking the deployment name (for example, ‘customer-churn-spss-model-web-service’).
+
+2. This opens a new page that shows an overview of the properties of the deployment (for example, name, creation date, or status).
+
+3. Select the **Test** tab.
+
+4. Select the file icon, which then lets you enter the values using JSON.
+
+5. Paste the JSON object in the downloaded Customer Churn Test Data.txt file into the Enter input data field.
+
+6. Click **Predict** to view the results.
+
+![wml](https://github.com/fawazsiddiqi/WatsonSPSS/raw/main/images/deploy-test-result.png?raw=true)
+
+The prediction result is given in terms of the probability that the customer will churn (True) or not (False). You can try it with other values, for example, by substituting the values with values taken from the customer-churn-kaggle.csv file. Another test is to change the phone number to something like “XYZ” and then run the prediction again. The prediction result should be the same, which indicates that the feature is not a factor in the prediction.
+
+If interested in seeing other examples for using the SPSS Modeler to predict customer churn, look at the tutorial [Predict Customer Churn by Building and Deploying Models Using Watson Studio Flows](https://medium.com/ibm-watson/predict-customer-churn-by-building-and-deploying-models-using-watson-studio-flows-7626b9fb5ada)
+
+### Conclusion
+
+This tutorial covered the basics of using the SPSS Modeler flow feature in Watson Studio, which included:
+
+- Creating a project
+- Provisioning and assigning services to the project
+- Adding assets to the project, such as data sets
+- Creating a Modeler flow
+- Using the Modeler flow editor to run and examine the model
+- Training and evaluating the model
+- Deploying the model as a web service
+- Scoring the machine learning model with test data
+
+Using the SPSS Modeler flow feature of Watson Studio provides a non-programming approach to creating a model to predict customer churn.
+
