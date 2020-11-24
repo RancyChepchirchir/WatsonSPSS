@@ -439,3 +439,8 @@ This tutorial covered the basics of using the SPSS Modeler flow feature in Watso
 
 Using the SPSS Modeler flow feature of Watson Studio provides a non-programming approach to creating a model to predict customer churn.
 
+## Workshop Resources 
+
+- Sign up for [IBM Cloud](https://ibm.biz/WatsonSPSS)
+- The slides used can be found [here](https://fawazsiddiqi.github.io/WatsonSPSS/#/)
+- Replay can be found [here](https://www.crowdcast.io/e/ml-spss)
