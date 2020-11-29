@@ -6,8 +6,6 @@ This tutorial explains how to graphically build and evaluate machine learning mo
 
 As with the other tutorials in this learning path, we use a customer churn data set that is available on [Kaggle](https://www.kaggle.com/sandipdatta/customer-churn-analysis/notebook#Churn-Analysis).
 
-#### About the data set
-
 
 ## Prerequisites
 
